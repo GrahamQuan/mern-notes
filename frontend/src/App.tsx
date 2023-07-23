@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Container } from 'react-bootstrap'
 import { BrowserRouter } from 'react-router-dom'
 import { Route, Routes } from 'react-router'
-import { Toaster, toast } from 'react-hot-toast'
+import toast, { Toaster } from 'react-hot-toast'
 
 import styles from './styles/App.module.css'
 import SignUpModal from './components/modal/SignUpModal'
