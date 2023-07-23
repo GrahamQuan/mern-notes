@@ -1,0 +1,32 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.text {
+  white-space: pre-line;
+}
+
+.buttonsGroup {
+  top: 50px;
+  right: 50px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.button:first-child {
+  margin-bottom: 10px;
+}
+
+.button:hover {
+  color: #0d6efd;
+}

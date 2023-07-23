@@ -1,0 +1,33 @@
+.noteCard {
+  background-color: cornsilk !important;
+}
+
+.noteCard:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* .noteCard:hover .buttons {
+  opacity: 1;
+} */
+
+.buttons {
+  cursor: pointer;
+  /* opacity: 0; */
+}
+
+.buttons:first-child {
+  margin-right: 7px;
+}
+
+.buttons:hover {
+  color: #0d6efd;
+}
+
+.cardBody {
+  overflow: hidden;
+  mask-image: linear-gradient(180deg, #000 60%, transparent);
+}
+
+.cardText {
+  white-space: pre-line;
+}
