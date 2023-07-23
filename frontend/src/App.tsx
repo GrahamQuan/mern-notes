@@ -1,15 +1,14 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Container } from 'react-bootstrap'
 import { BrowserRouter } from 'react-router-dom'
 import { Route, Routes } from 'react-router'
-import toast, { Toaster } from 'react-hot-toast'
+import { Toaster } from 'react-hot-toast'
 
 import styles from './styles/App.module.css'
 import SignUpModal from './components/modal/SignUpModal'
 import type { User } from './models/user'
 import NavBar from './components/navbar/NavBar'
 import LoginModal from './components/modal/LoginModal'
-import { getLoggedInUser } from './network/usersApi'
 import Home from './pages/home'
 import NotFound from './pages/NotFound'
 import NotePage from './pages/note/Page'
@@ -18,18 +17,6 @@ function App() {
   const [loggedInUser, setLoggedInUser] = useState<User | null>(null)
   const [showSignUpModal, setShowSignUpModal] = useState(false)
   const [showLoginModal, setShowLoginModal] = useState(false)
-
-  const fetchUser = async () => {
-    try {
-      await getLoggedInUser()
-    } catch (error: any) {
-      toast.error(error)
-    }
-  }
-
-  useEffect(() => {
-    fetchUser().catch((err) => console.log(err))
-  }, [])
 
   return (
     <BrowserRouter>
