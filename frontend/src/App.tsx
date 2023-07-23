@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Container } from 'react-bootstrap'
 import { BrowserRouter } from 'react-router-dom'
 import { Route, Routes } from 'react-router'
-import { Toaster } from 'react-hot-toast'
+import { Toaster, toast } from 'react-hot-toast'
 
 import styles from './styles/App.module.css'
 import SignUpModal from './components/modal/SignUpModal'
@@ -20,7 +20,11 @@ function App() {
   const [showLoginModal, setShowLoginModal] = useState(false)
 
   const fetchUser = async () => {
-    await getLoggedInUser()
+    try {
+      await getLoggedInUser()
+    } catch (error: any) {
+      toast.error(error)
+    }
   }
 
   useEffect(() => {

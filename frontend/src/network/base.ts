@@ -18,10 +18,7 @@ const fetchApi = async (routes: string, init?: RequestInit) => {
       throw new ConflictError(errorMessage)
     } else {
       throw Error(
-        'Request failed with status: ' +
-          response.status +
-          ' message: ' +
-          errorMessage
+        `Request failed with status: ${response.status}, message: ${errorMessage}`
       )
     }
   }

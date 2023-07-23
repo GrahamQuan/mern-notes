@@ -2,6 +2,7 @@ import { Button, Navbar } from 'react-bootstrap'
 import { User } from '../../models/user'
 import * as usersApi from '../../network/usersApi'
 import { FaUserCircle } from 'react-icons/fa'
+import { toast } from 'react-hot-toast'
 
 interface NavBarLoggedInViewProps {
   user: User
@@ -16,9 +17,8 @@ const NavBarLoggedInView = ({
     try {
       await usersApi.logout()
       onLogoutSuccessful()
-    } catch (error) {
-      console.error(error)
-      alert(error)
+    } catch (error: any) {
+      toast.error(error)
     }
   }
 
