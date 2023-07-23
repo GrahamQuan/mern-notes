@@ -11,7 +11,7 @@ const fetchApi = async (routes: string, init?: RequestInit) => {
     return response
   } else {
     const errorBody = await response.json()
-    const errorMessage = errorBody.error
+    const errorMessage = errorBody.error as string
     if (response.status === 401) {
       throw new UnauthorizedError(errorMessage)
     } else if (response.status === 409) {

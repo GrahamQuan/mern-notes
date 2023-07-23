@@ -17,6 +17,10 @@ const NotePage = () => {
   const [note, setNote] = useState<Note | null>(null)
   const [loading, setLoading] = useState(true)
 
+  useEffect(() => {
+    fetchNote().catch((err) => console.log(err))
+  }, [])
+
   const Empty = (
     <>
       <p>No such note</p>
@@ -58,11 +62,6 @@ const NotePage = () => {
       setLoading(false)
     }
   }
-
-  useEffect(() => {
-    fetchNote()
-    return () => {}
-  }, [])
 
   if (loading) {
     return (

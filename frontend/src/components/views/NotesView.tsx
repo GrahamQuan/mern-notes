@@ -35,7 +35,7 @@ const NotesView = () => {
   }
 
   useEffect(() => {
-    loadNotes()
+    loadNotes().catch((err) => console.log(err))
   }, [])
 
   async function deleteNote(note: NoteModel) {

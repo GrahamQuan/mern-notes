@@ -28,8 +28,7 @@ function App() {
   }
 
   useEffect(() => {
-    fetchUser()
-    return () => {}
+    fetchUser().catch((err) => console.log(err))
   }, [])
 
   return (
@@ -60,7 +59,7 @@ function App() {
           {showLoginModal && (
             <LoginModal
               onDismiss={() => setShowLoginModal(false)}
-              onLoginSuccessful={async (user) => {
+              onLoginSuccessful={(user) => {
                 setLoggedInUser(user)
                 setShowLoginModal(false)
               }}
