@@ -37,9 +37,9 @@ app.use(
   })
 )
 
-// app.get('/', (req, res, next) => {
-//   res.send('Hello MERN')
-// })
+app.get('/api', (req, res, next) => {
+  res.send('Hello MERN')
+})
 
 app.use('/api/users', usersRoutes)
 app.use('/api/notes', authenticate, notesRoutes)
